@@ -601,3 +601,4 @@ C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Ap
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Api\obj\Debug\net8.0\CarRentalSystem.Api.pdb
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Api\obj\Debug\net8.0\CarRentalSystem.Api.genruntimeconfig.cache
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Api\obj\Debug\net8.0\ref\CarRentalSystem.Api.dll
+C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Api\obj\Debug\net8.0\CarRentalSystem.Api.sourcelink.json

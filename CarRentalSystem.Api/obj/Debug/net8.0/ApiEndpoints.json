@@ -1,24 +1,8 @@
 [
   {
-    "ContainingType": "CarRentalSystem.Api.Controllers.AuthenticationController",
-    "Method": "GetUserById",
-    "RelativePath": "{UserId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "UserId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "CarRentalSystem.Api.Controllers.BookingController",
     "Method": "GetAllAsync",
-    "RelativePath": "bookings",
+    "RelativePath": "api/bookings",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,7 +12,7 @@
   {
     "ContainingType": "CarRentalSystem.Api.Controllers.BookingController",
     "Method": "GetAsyncById",
-    "RelativePath": "bookings/{bookingId}",
+    "RelativePath": "api/bookings/{bookingId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -42,9 +26,61 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CarRentalSystem.Api.Controllers.BookingController",
+    "Method": "AddBookingAsync",
+    "RelativePath": "api/bookings/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingRequest",
+        "Type": "CarRentalSystem.Domain.Request.BookingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalSystem.Application.Bases.BaseResponse\u00601[[CarRentalSystem.Domain.Response.BookingResponse, CarRentalSystem.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CarRentalSystem.Api.Controllers.AuthenticationController",
+    "Method": "ActiveAccount",
+    "RelativePath": "api/public/auth/active/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalSystem.Application.Bases.BaseResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CarRentalSystem.Api.Controllers.AuthenticationController",
     "Method": "Login",
-    "RelativePath": "login",
+    "RelativePath": "api/public/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -70,7 +106,7 @@
   {
     "ContainingType": "CarRentalSystem.Api.Controllers.AuthenticationController",
     "Method": "Register",
-    "RelativePath": "register",
+    "RelativePath": "api/public/auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -94,19 +130,118 @@
     ]
   },
   {
-    "ContainingType": "CarRentalSystem.Api.Controllers.VehicleController",
-    "Method": "GetAllAsync",
-    "RelativePath": "vehicles",
+    "ContainingType": "CarRentalSystem.Api.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/user/{UserId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRentalSystem.Api.Controllers.UserController",
+    "Method": "RequestVerification",
+    "RelativePath": "api/user/request-verification/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalSystem.Application.Bases.BaseResponse\u00601[[CarRentalSystem.Domain.Entity.UserEntity, CarRentalSystem.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CarRentalSystem.Api.Controllers.UserController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/user/update/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRequest",
+        "Type": "CarRentalSystem.Application.Request.RegisterRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CarRentalSystem.Application.Bases.BaseResponse\u00601[[CarRentalSystem.Domain.Entity.UserEntity, CarRentalSystem.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CarRentalSystem.Api.Controllers.VehicleController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/vehicles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FromDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SearchText",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "CarRentalSystem.Api.Controllers.VehicleController",
     "Method": "GetByIdAsync",
-    "RelativePath": "vehicles/{vehicleId}",
+    "RelativePath": "api/vehicles/{vehicleId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -118,6 +253,42 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CarRentalSystem.Api.Controllers.VehicleController",
+    "Method": "CheckAvailableVehicle",
+    "RelativePath": "api/vehicles/check-available",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "VehicleId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateOfBooking",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateOfReturn",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "CarRentalSystem.Api.Controllers.WeatherForecastController",
@@ -137,6 +308,7 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "GetWeatherForecast"
   }
 ]

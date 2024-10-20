@@ -6,6 +6,16 @@ namespace CarRentalSystem.Persistence.Repository
 {
     public class BookingRepository : IBookingRepository
     {
+        public async Task<bool> AddAsync(BookingEntity entity)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                await context.Booking.AddAsync(entity);
+                var res = await context.SaveChangesAsync();
+                return res > 0 ? true : false;
+            }
+        }
+
         public async Task<IEnumerable<BookingEntity>> GetAsync()
         {
             using (var context = new ApplicationDbContext())

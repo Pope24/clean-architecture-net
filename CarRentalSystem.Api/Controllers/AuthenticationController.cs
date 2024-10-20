@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace CarRentalSystem.Api.Controllers
 {
     [ApiController]
-    public class AuthenticationController: ControllerBase
+    [Route("api/public/auth")]
+    public class AuthenticationController : ControllerBase
     {
         private readonly IUserService _userService;
 
@@ -22,18 +23,7 @@ namespace CarRentalSystem.Api.Controllers
         {
             return await _userService.Register(registerRequest);
         }
-        [HttpGet("user/{UserId:Guid}")]
-        public async Task<IActionResult> GetUserById(Guid UserId)
-        {
-            var user = await _userService.GetByIdAsync(UserId);
-            if (user != null)
-            {
-                return Ok(user);
-            } else
-            {
-                return NotFound();
-            }
-        }
+
         [HttpPost("login")]
         public async Task<BaseResponse<LoginResponse>> Login(LoginRequest loginRequest)
         {

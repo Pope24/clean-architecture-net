@@ -72,3 +72,4 @@ C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.In
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Infrustructure\obj\Debug\net8.0\refint\CarRentalSystem.Infrustructure.dll
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Infrustructure\obj\Debug\net8.0\CarRentalSystem.Infrustructure.pdb
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Infrustructure\obj\Debug\net8.0\ref\CarRentalSystem.Infrustructure.dll
+C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Infrustructure\obj\Debug\net8.0\CarRentalSystem.Infrustructure.sourcelink.json

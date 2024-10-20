@@ -73,3 +73,4 @@ C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Ap
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Application\obj\Debug\net8.0\refint\CarRentalSystem.Application.dll
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Application\obj\Debug\net8.0\CarRentalSystem.Application.pdb
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Application\obj\Debug\net8.0\ref\CarRentalSystem.Application.dll
+C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Application\obj\Debug\net8.0\CarRentalSystem.Application.sourcelink.json

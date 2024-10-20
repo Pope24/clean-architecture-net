@@ -19,17 +19,34 @@ namespace CarRentalSystem.Persistence
         public DbSet<CouponEntity> Coupon { get; set; }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            foreach (var entry in ChangeTracker.Entries<UserEntity>())
+            foreach (var entry in ChangeTracker.Entries())
             {
-                // Ensure Created is UTC
-                if (entry.Entity.Created.Kind != DateTimeKind.Utc)
+                foreach (var property in entry.Entity.GetType().GetProperties())
                 {
-                    entry.Entity.Created = DateTime.SpecifyKind(entry.Entity.Created, DateTimeKind.Utc);
+                    // Check if the property is of type DateTime
+                    if (property.PropertyType == typeof(DateTime))
+                    {
+                        var dateTimeValue = (DateTime)property.GetValue(entry.Entity);
+
+                        // Ensure the DateTime is in UTC
+                        if (dateTimeValue.Kind == DateTimeKind.Unspecified || dateTimeValue.Kind == DateTimeKind.Local)
+                        {
+                            // If Local, convert it to UTC
+                            if (dateTimeValue.Kind == DateTimeKind.Local)
+                            {
+                                dateTimeValue = TimeZoneInfo.ConvertTimeToUtc(dateTimeValue);
+                            }
+
+                            // Set the DateTime to UTC
+                            property.SetValue(entry.Entity, DateTime.SpecifyKind(dateTimeValue, DateTimeKind.Utc));
+                        }
+                    }
                 }
             }
 
             return await base.SaveChangesAsync(cancellationToken);
         }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //Configuration for VehicleEntity

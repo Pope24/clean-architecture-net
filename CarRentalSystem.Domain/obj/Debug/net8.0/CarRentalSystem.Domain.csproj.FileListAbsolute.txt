@@ -53,3 +53,4 @@ C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Do
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\refint\CarRentalSystem.Domain.dll
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.pdb
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\ref\CarRentalSystem.Domain.dll
+C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.sourcelink.json

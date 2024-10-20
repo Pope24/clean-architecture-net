@@ -93,3 +93,4 @@ C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Pe
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Persistence\obj\Debug\net8.0\CarRentalSystem.Persistence.pdb
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Persistence\obj\Debug\net8.0\CarRentalSystem.Persistence.genruntimeconfig.cache
 C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Persistence\obj\Debug\net8.0\ref\CarRentalSystem.Persistence.dll
+C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Persistence\obj\Debug\net8.0\CarRentalSystem.Persistence.sourcelink.json

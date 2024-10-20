@@ -32,7 +32,7 @@ namespace CarRentalSystem.Domain.Entity
 
     public class VehicleAmenityProperty
     {
-        public List<string>? Amenities { get; set; } = new();
+        public List<EAmenityVehicle>? Amenities { get; set; } = new();
     }
 
     public class AdditionalFeeProperty

@@ -2,9 +2,10 @@
 {
     public class BaseFilteration
     {
-        public string[] OrderBy { get; set; }
-        public string FromDate { get; set; }
-        public string ToDate { get; set; }
-        public string? SearchText { get; set; }
+        public string? OrderBy { get; set; } = "";
+        public string? FromDate { get; set; } = "";
+        public string? ToDate { get; set; } = "";
+        public string? SearchText { get; set; } = "";
+        public int Page { get; set; } = 1;
     }
 }

@@ -1,4 +1,7 @@
-﻿using CarRentalSystem.Domain.Entity;
+﻿using CarRentalSystem.Application.Bases;
+using CarRentalSystem.Domain.Entity;
+using CarRentalSystem.Domain.Request;
+using CarRentalSystem.Domain.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +12,8 @@ namespace CarRentalSystem.Application.Contracts.Service
 {
     public interface IVehicleService
     {
-        Task<IEnumerable<VehicleEntity>> GetAsync();
-        Task<VehicleEntity> GetAsyncById(Guid id);
+        Task<BasePaging<VehicleResponse>> GetAsync(BaseFilteration filter);
+        Task<VehicleResponse> GetAsyncById(Guid id);
+        Task<bool> CheckAvailableVehicle(CheckAvailableRequest availableRequest);
     }
 }

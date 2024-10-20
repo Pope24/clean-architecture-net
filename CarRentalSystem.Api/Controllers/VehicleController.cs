@@ -1,37 +1,45 @@
-﻿using CarRentalSystem.Application.Contracts.Repository;
-using Microsoft.AspNetCore.Http;
+﻿using CarRentalSystem.Application.Bases;
+using CarRentalSystem.Application.Contracts.Service;
+using CarRentalSystem.Domain.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarRentalSystem.Api.Controllers
 {
     [ApiController]
+    [Route("api/vehicles")]
     public class VehicleController : ControllerBase
     {
-        private readonly IVehicleRepository _vehicleRepository;
+        private readonly IVehicleService _vehicleService;
 
-        public VehicleController(IVehicleRepository vehicleRepository)
+        public VehicleController(IVehicleService vehicleService)
         {
-            _vehicleRepository = vehicleRepository;
+            _vehicleService = vehicleService;
         }
 
-        [HttpGet("vehicles")]
-        public async Task<IActionResult> GetAllAsync() {
-            var vehicles = await _vehicleRepository.GetAsync();
-            if (vehicles.Count() == 0)
+        [HttpGet("")]
+        public async Task<IActionResult> GetAllAsync([FromQuery] BaseFilteration filter)
+        {
+            var vehicles = await _vehicleService.GetAsync(filter);
+            if (vehicles.Items.Count() == 0)
             {
                 return NotFound();
             }
             return Ok(vehicles);
         }
-        [HttpGet("vehicles/{vehicleId:Guid}")]
+        [HttpGet("{vehicleId:Guid}")]
         public async Task<IActionResult> GetByIdAsync(Guid vehicleId)
         {
-            var vehicle = await _vehicleRepository.GetAsyncById(vehicleId);
+            var vehicle = await _vehicleService.GetAsyncById(vehicleId);
             if (vehicle == null)
             {
                 return NotFound();
             }
             return Ok(vehicle);
+        }
+        [HttpGet("check-available")]
+        public async Task<bool> CheckAvailableVehicle([FromQuery] CheckAvailableRequest availableRequest)
+        {
+            return await _vehicleService.CheckAvailableVehicle(availableRequest);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using CarRentalSystem.Domain.Entity;
+﻿using CarRentalSystem.Application.Bases;
+using CarRentalSystem.Domain.Entity;
+using CarRentalSystem.Domain.Request;
+using CarRentalSystem.Domain.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +14,6 @@ namespace CarRentalSystem.Application.Contracts.Service
     {
         Task<IEnumerable<BookingEntity>> GetAsync();
         Task<BookingEntity> GetAsyncById(Guid id);
+        Task<BaseResponse<BookingResponse>> AddBookingAsync(BookingRequest bookingRequest);
     }
 }
