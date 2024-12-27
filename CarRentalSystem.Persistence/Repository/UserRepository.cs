@@ -12,7 +12,7 @@ namespace CarRentalSystem.Persistence.Repository
 {
     public class UserRepository : IUserRepository
     {
-        public async Task<IEnumerable<UserEntity>> GetAllAsync()
+        public async Task<List<UserEntity>> GetAllAsync()
         {
             using (var context = new ApplicationDbContext())
             {

@@ -11,6 +11,7 @@ namespace CarRentalSystem.Domain.Response
     {
         public Guid Id { get; set; }
         public string DisplayName { get; set; }
+        public string UserName { get; set; }
         public string Role { get; set; }
         public string VerifyStatus { get; set; }
         public string Avatar { get; set; } = "https://i.pinimg.com/736x/c6/e5/65/c6e56503cfdd87da299f72dc416023d4.jpg";

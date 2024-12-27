@@ -1,0 +1,99 @@
+﻿<Window x:Class="WPFApp.BookingCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="BookingCustomerWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="137*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <!--<Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0099FF" Offset="0"/>
+                    <GradientStop Color="#FF347BDA" Offset="0.794"/>
+                    <GradientStop Color="#FF60B1E7" Offset="1"/>
+                    <GradientStop Color="#FF596FDD" Offset="0.309"/>
+                    <GradientStop Color="#FF472FDE" Offset="0.484"/>
+                </LinearGradientBrush>
+            </Grid.Background>-->
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="label" Content="Booking Vehicle" Grid.Column="2" Grid.Row="0" FontSize="36" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="600"/>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+                <Label Margin="2,2,2,2" Content="Start Date" FontWeight="Bold" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <DatePicker x:Name="dpStartDate" Margin="4,6,10,2" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2"  SelectedDateChanged="dateSelectedChange"/>
+                <Label Margin="2,2,2,2" Content="End Date" FontWeight="Bold"  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"/>
+                <DatePicker x:Name="dpEndDate" Margin="4,4,4,4" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" SelectedDateChanged="dateSelectedChange"/>
+                <Button x:Name="btnCheckAvailable" Content="Check available" Width="150" Height="40" Margin="10,0,10,0" Click="btnCheckAvailable_Click"/>
+            </StackPanel>
+            <TextBox x:Name="txtVehicleID" Visibility="Hidden" Margin="4,4,4,4" Grid.Column="2" Grid.Row="2" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2" IsEnabled="False"/>
+            <Label x:Name="label1" Margin="2,2,2,2" Content="Vehicle Number" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtVehicleNumber" Margin="4,4,4,4" Grid.Column="2" Grid.Row="2" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2" IsEnabled="False"/>
+
+            <Label x:Name="label2" Margin="2,2,2,2" Grid.Column="0" Grid.Row="3" Content="Vehicle Name" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtVehicleName" Margin="4,4,4,4" Grid.Column="2" Grid.Row="3" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="label3" Margin="2,2,2,2" Content="Price rental a day" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtPriceRentalADay" Margin="4,4,4,4" Grid.Column="2" Grid.Row="4" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="label4" Margin="2,2,2,2" Content="VAT Fee" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtVATFee" Margin="4,4,4,4" Grid.Column="2" Grid.Row="5" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="label5" Margin="2,2,2,2" Content="Deposit Fee" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtDepositFee" Margin="4,4,4,4" Grid.Column="2" Grid.Row="6" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+            <Label x:Name="label6" Margin="2,2,2,2" Content="Reservation Fee" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtReservationFee" Margin="4,4,4,4" Grid.Column="2" Grid.Row="7" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="label7" Margin="2,2,2,2" Content="Number of seat" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtNumberOfSeat" Margin="4,4,4,4" Grid.Column="2" Grid.Row="8" Text="" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+
+            <DataGrid x:Name="dgData" Margin="0,4,4,28" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="2" SelectionChanged="dgData_SelectionChanged"
+  AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Vehicle Number" Binding="{Binding VehicleCode}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding VehicleName}" />
+                    <DataGridTextColumn Header="Price rental a day" Binding="{Binding ADayRentalPrice}" />
+                    <DataGridTextColumn Header="VAT fee" Binding="{Binding VATFee}" />
+                    <DataGridTextColumn Header="Deposit fee" Binding="{Binding DepositFee}" />
+                    <DataGridTextColumn Header="Reservation fee" Binding="{Binding ReservationFee}" />
+                    <DataGridTextColumn Header="Number of seat" Binding="{Binding NumberOfSeats}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10">
+                <Button x:Name="btnBookingHistory" Content="Booking History" Width="150" Height="40" Background="#FF0099FF" Foreground="White" Margin="10,0,10,0" Click="btnBookingHistory_Click"/>
+                <Button x:Name="btnBooking" Content="Booking" Width="150" Height="40" Background="#FF0099FF" Foreground="White" Margin="10,0,10,0" Click="btnBooking_Click" Visibility="Hidden"/>
+                <Button x:Name="btnLogout" Content="Log out" Width="150" Height="40" Background="Gray" Foreground="White" Margin="10,0,10,0" Click="btnLogout_Click"/>
+            </StackPanel>
+            <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="9" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Height="24" Grid.ColumnSpan="2" FontSize="16"/>
+            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="60,35,0,0" Grid.Row="9" VerticalAlignment="Top" Width="64" Click="btnSearch_Click"/>
+        </Grid>
+    </Grid>
+</Window>

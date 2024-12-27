@@ -8,6 +8,7 @@ using CarRentalSystem.Application.Validations;
 using CarRentalSystem.Domain.Entity;
 using CarRentalSystem.Domain.Enum;
 using CarRentalSystem.Domain.Response;
+using CarRentalSystem.Persistence.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,9 +26,13 @@ namespace CarRentalSystem.Infrustructure
         {
             this.userRepository = userRepository;
         }
-        public Task<IEnumerable<UserEntity>> GetAllAsync()
+        public UserService()
         {
-            return userRepository.GetAllAsync();
+            userRepository = new UserRepository();
+        }
+        public async Task<IEnumerable<UserEntity>> GetAllAsync()
+        {
+            return await userRepository.GetAllAsync();
         }
 
         public Task<UserEntity> GetByEmailAsync(string email)
@@ -178,7 +183,7 @@ namespace CarRentalSystem.Infrustructure
             var entity = await userRepository.GetAsyncById(id);
             return ConvertUserEntityToResponse(entity);
         }
-        public UserResponse ConvertUserEntityToResponse(UserEntity entity)
+        public static UserResponse ConvertUserEntityToResponse(UserEntity entity)
         {
             return new UserResponse()
             {
@@ -245,6 +250,7 @@ namespace CarRentalSystem.Infrustructure
                         {
                             Id = user.Id,
                             DisplayName = user.DisplayName,
+                            UserName = user.UserName,
                             Role = UserConverter.ConvertRoleByEnum(user.Role),
                             VerifyStatus = UserConverter.ConvertVerifyStatusByEnum(user.VerifyStatus),
                             Token = token
@@ -287,7 +293,7 @@ namespace CarRentalSystem.Infrustructure
                 issuer: configuration["Jwt:Issuer"],
                 audience: configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.Now.AddMinutes(300),
                 signingCredentials: signIn
             );
 

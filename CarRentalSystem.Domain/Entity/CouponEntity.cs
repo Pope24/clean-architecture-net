@@ -17,7 +17,7 @@ namespace CarRentalSystem.Domain.Entity
         public DateTime ExpiryDate { get; set; }
         public EDiscountType DiscountType { get; set; }
         public int UsageLimit { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } = DateTime.Now.ToLocalTime();
         public string TextSearch { get; set; }
         public LegacyDataExtension DataExtension { get; set; }
         public ICollection<BookingEntity> Bookings { get; } = new List<BookingEntity>();

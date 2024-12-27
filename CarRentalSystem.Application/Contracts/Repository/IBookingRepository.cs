@@ -11,6 +11,8 @@ namespace CarRentalSystem.Application.Contracts.Repository
     {
         Task<IEnumerable<BookingEntity>> GetAsync();
         Task<BookingEntity> GetAsyncById(Guid id);
+        Task<List<BookingEntity>> GetAllAsyncByUserId(Guid userId);
         Task<bool> AddAsync(BookingEntity entity);
+        Task<bool> UpdateAsync(BookingEntity entity);
     }
 }

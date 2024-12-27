@@ -1,31 +1,32 @@
 ﻿using CarRentalSystem.Application.Contracts.Repository;
 using CarRentalSystem.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarRentalSystem.Persistence.Repository
 {
-    public class VehicleRepository: IVehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
+        private readonly ApplicationDbContext _context;
 
-        public async Task<IEnumerable<VehicleEntity>> GetAsync()
+        public VehicleRepository(ApplicationDbContext context)
         {
-            using (var context = new ApplicationDbContext())
-            {
-                var vehicles = await context.Vehicle
-                    .Include(v => v.AdditionalFeeProperty)
-                    .Include(v => v.VehicleAmenityProperty)
-                    .Include(v => v.VehicleImageProperty)
-                    .Include(v => v.VehicleEngineProperty)
-                    .Include(v => v.DataExtension)
-                    .ToListAsync();
-                return vehicles;
-            }
-        } 
+            _context = context;
+        }
+        public VehicleRepository() { 
+            _context = new ApplicationDbContext();
+        }
+        public async Task<List<VehicleEntity>> GetAsync()
+        {
+
+            var vehicles = await _context.Vehicle
+                .Include(v => v.AdditionalFeeProperty)
+                .Include(v => v.VehicleAmenityProperty)
+                .Include(v => v.VehicleImageProperty)
+                .Include(v => v.VehicleEngineProperty)
+                .Include(v => v.DataExtension)
+                .ToListAsync();
+            return vehicles;
+        }
 
         public async Task<VehicleEntity> GetAsyncById(Guid id)
         {
@@ -34,6 +35,6 @@ namespace CarRentalSystem.Persistence.Repository
                 var vehicle = await context.Vehicle.Where(s => s.Id == id).FirstOrDefaultAsync();
                 return vehicle;
             }
-        } 
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace CarRentalSystem.Domain.Entity
         public decimal ADayRentalPrice { get; set; }
         public AdditionalFeeProperty AdditionalFeeProperty { get; set; }
         public VehicleImageProperty VehicleImageProperty { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } = DateTime.Now.ToLocalTime();
         public string TextSearch { get; set; }
         public LegacyDataExtension DataExtension { get; set; }
         public ICollection<BookingEntity> Bookings { get; } = new List<BookingEntity>();

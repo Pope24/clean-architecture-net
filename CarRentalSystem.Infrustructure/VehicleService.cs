@@ -6,6 +6,7 @@ using CarRentalSystem.Application.Extensions;
 using CarRentalSystem.Domain.Entity;
 using CarRentalSystem.Domain.Request;
 using CarRentalSystem.Domain.Response;
+using CarRentalSystem.Persistence.Repository;
 
 namespace CarRentalSystem.Infrustructure
 {
@@ -20,10 +21,16 @@ namespace CarRentalSystem.Infrustructure
             this._bookingRepository = bookingRepository;
         }
 
+        public VehicleService()
+        {
+            _vehicleRepository = new VehicleRepository();
+            _bookingRepository = new BookingRepository();
+        }
+
         public async Task<BasePaging<VehicleResponse>> GetAsync(BaseFilteration filter)
         {
             var entities = await _vehicleRepository.GetAsync();
-            var res = entities.Select(s => ConvertEntityToResponse(s)).ToList();
+            var res = entities.Where(s => (s.TextSearch ?? "").Contains(filter.SearchText ?? "", StringComparison.OrdinalIgnoreCase)).Select(s => ConvertEntityToResponse(s)).ToList();
             var paging = BasePaging<VehicleResponse>.ToPagedList(res, filter.Page, 9);
             return paging;
         }
@@ -33,7 +40,7 @@ namespace CarRentalSystem.Infrustructure
             var entity = await _vehicleRepository.GetAsyncById(id);
             return ConvertEntityToResponse(entity);
         }
-        public VehicleResponse ConvertEntityToResponse(VehicleEntity s)
+        public static VehicleResponse ConvertEntityToResponse(VehicleEntity s)
         {
             var res = new VehicleResponse()
             {

@@ -1,10 +1,15 @@
 ﻿using CarRentalSystem.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace CarRentalSystem.Persistence
 {
     public class ApplicationDbContext : DbContext
     {
+        static ApplicationDbContext()
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        }
         public ApplicationDbContext()
         {
 
@@ -17,6 +22,8 @@ namespace CarRentalSystem.Persistence
         public DbSet<BookingEntity> Booking { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<CouponEntity> Coupon { get; set; }
+        public DbSet<TransactionEntity> Transactions { get; set; }
+        public DbSet<FinesEntity> Fines { get; set; }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries())
@@ -38,7 +45,7 @@ namespace CarRentalSystem.Persistence
                             }
 
                             // Set the DateTime to UTC
-                            property.SetValue(entry.Entity, DateTime.SpecifyKind(dateTimeValue, DateTimeKind.Utc));
+                            property.SetValue(entry.Entity, DateTime.SpecifyKind(dateTimeValue.ToLocalTime(), DateTimeKind.Utc));
                         }
                     }
                 }
@@ -103,7 +110,7 @@ namespace CarRentalSystem.Persistence
                     .OnDelete(DeleteBehavior.Cascade);
 
                 v.HasOne(booking => booking.Vehicle)
-                    .WithMany( vehicle => vehicle.Bookings)
+                    .WithMany(vehicle => vehicle.Bookings)
                     .HasForeignKey(booking => booking.VehicleId)
                     .OnDelete(DeleteBehavior.Cascade);
 
@@ -121,7 +128,7 @@ namespace CarRentalSystem.Persistence
             });
 
             //Configuration for CouponEntity
-            builder.Entity<CouponEntity>(v => 
+            builder.Entity<CouponEntity>(v =>
             {
                 v.HasMany(coupon => coupon.Bookings)
                     .WithOne(booking => booking.Coupon)
@@ -141,6 +148,42 @@ namespace CarRentalSystem.Persistence
                 v.HasMany(user => user.Bookings)
                     .WithOne(booking => booking.User)
                     .HasForeignKey(booking => booking.UserId);
+                v.OwnsOne(x => x.DataExtension, d =>
+                {
+                    d.ToJson();
+                    d.Property(f => f.Id);
+                    d.Property(f => f.Name);
+                    d.Property(f => f.Data);
+                });
+            });
+            builder.Entity<TransactionEntity>(v =>
+            {
+                v.Property(transaction => transaction.FinesIds)
+                    .HasColumnType("jsonb") // Use jsonb as the storage type
+                    .HasConversion(
+                        fines => JsonSerializer.Serialize(fines, (JsonSerializerOptions)null), // Serialize to JSON
+                        finesString => JsonSerializer.Deserialize<List<string>>(finesString, (JsonSerializerOptions)null)) // Deserialize from JSON
+                    .IsRequired(false); // Allow null if needed
+                v.HasOne<UserEntity>() // Assuming UserEntity is linked
+                    .WithMany() // No need for navigation property in UserEntity
+                    .HasForeignKey(transaction => transaction.UserId)
+                    .OnDelete(DeleteBehavior.Cascade); // Set cascade delete
+
+                // If there is a relationship with BookingEntity (nullable)
+                v.HasOne<BookingEntity>() // Assuming BookingEntity is linked
+                    .WithMany() // No need for navigation property in BookingEntity
+                    .HasForeignKey(transaction => transaction.BookingId)
+                    .OnDelete(DeleteBehavior.SetNull);
+                v.OwnsOne(x => x.DataExtension, d =>
+                {
+                    d.ToJson();
+                    d.Property(f => f.Id);
+                    d.Property(f => f.Name);
+                    d.Property(f => f.Data);
+                });
+            });
+            builder.Entity<FinesEntity>(v =>
+            {
                 v.OwnsOne(x => x.DataExtension, d =>
                 {
                     d.ToJson();

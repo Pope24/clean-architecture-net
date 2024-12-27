@@ -9,9 +9,9 @@ namespace CarRentalSystem.Domain.Request
     public class PaymentInforRequest
     {
         public Guid BookingId { get; set; }
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
-        public PaymentInforRequest(Guid bookingId, double amount)
+        public PaymentInforRequest(Guid bookingId, decimal amount)
         {
             BookingId = bookingId;
             Amount = amount;

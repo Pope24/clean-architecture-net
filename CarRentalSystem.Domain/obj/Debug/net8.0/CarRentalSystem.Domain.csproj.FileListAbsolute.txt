@@ -42,15 +42,3 @@ C:\Users\alexander.le\alexander_le-homework\homeworks\CarRentalSystem0310\CarRen
 C:\Users\alexander.le\alexander_le-homework\homeworks\CarRentalSystem0310\CarRentalSystem0210\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\refint\CarRentalSystem.Domain.dll
 C:\Users\alexander.le\alexander_le-homework\homeworks\CarRentalSystem0310\CarRentalSystem0210\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.pdb
 C:\Users\alexander.le\alexander_le-homework\homeworks\CarRentalSystem0310\CarRentalSystem0210\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\ref\CarRentalSystem.Domain.dll
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\bin\Debug\net8.0\CarRentalSystem.Domain.deps.json
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\bin\Debug\net8.0\CarRentalSystem.Domain.dll
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\bin\Debug\net8.0\CarRentalSystem.Domain.pdb
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.AssemblyInfoInputs.cache
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.AssemblyInfo.cs
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.csproj.CoreCompileInputs.cache
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.dll
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\refint\CarRentalSystem.Domain.dll
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.pdb
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\ref\CarRentalSystem.Domain.dll
-C:\SS\CarRentalSystem0410\CarRentalSystem0410\CarRentalSystem\CarRentalSystem.Domain\obj\Debug\net8.0\CarRentalSystem.Domain.sourcelink.json

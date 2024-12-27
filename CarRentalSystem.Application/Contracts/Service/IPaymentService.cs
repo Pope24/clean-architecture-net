@@ -12,6 +12,7 @@ namespace CarRentalSystem.Application.Contracts.Service
     public interface IPaymentService
     {
         string CreatePaymentUrlByVNPay(PaymentInforRequest model, HttpContext context);
+        string CreatePaymentForFines(PaymentInforRequest model, HttpContext context);
         //PaymentResponseModel PaymentExecute(IQueryCollection collections);
     }
 }

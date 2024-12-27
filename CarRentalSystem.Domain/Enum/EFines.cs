@@ -9,9 +9,7 @@ namespace CarRentalSystem.Domain.Enum
     public enum EFineReason
     {
         LateReturn = 1,
-        Cancellation = 3,
-        MakingDamage = 5,
-        Cleaning = 7,
-        TrafficViolation = 9
+        Cleaning = 3,
+        MakingDamage = 5
     }
 }

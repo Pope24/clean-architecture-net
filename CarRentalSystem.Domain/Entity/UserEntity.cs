@@ -21,7 +21,7 @@ namespace CarRentalSystem.Domain.Entity
         public EVerifyStatus VerifyStatus { get; set; }
         public string Address { get; set; }
         public EUserStatus Status { get; set; }
-        public DateTime Created { get; set; } = DateTime.UtcNow;
+        public DateTime Created { get; set; } = DateTime.Now.ToLocalTime();
         public string TextSearch { get; set; }
         public LegacyDataExtension DataExtension { get; set; }
         public ICollection<BookingEntity> Bookings { get;} = new List<BookingEntity>();

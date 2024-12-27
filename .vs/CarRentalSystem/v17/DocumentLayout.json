@@ -1,7 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\wpfapp\\transactiondetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|solutionrelative:wpfapp\\transactiondetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\wpfapp\\bookinghistorywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|solutionrelative:wpfapp\\bookinghistorywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\wpfapp\\finesdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|solutionrelative:wpfapp\\finesdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\wpfapp\\bookinghistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|solutionrelative:wpfapp\\bookinghistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\wpfapp\\finesdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{665FD714-7BFA-477E-AEEC-F313EB7437BE}|WPFApp\\WPFApp.csproj|solutionrelative:wpfapp\\finesdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30F7D36D-1924-4108-B4CD-F688DA682B64}|CarRentalSystem.Infrustructure\\CarRentalSystem.Infrustructure.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\carrentalsystem.infrustructure\\finesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30F7D36D-1924-4108-B4CD-F688DA682B64}|CarRentalSystem.Infrustructure\\CarRentalSystem.Infrustructure.csproj|solutionrelative:carrentalsystem.infrustructure\\finesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E964E9-60DE-4BA5-B52E-94EAFA313966}|CarRentalSystem.Domain\\CarRentalSystem.Domain.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\carrentalsystem.domain\\response\\bookinghistoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E964E9-60DE-4BA5-B52E-94EAFA313966}|CarRentalSystem.Domain\\CarRentalSystem.Domain.csproj|solutionrelative:carrentalsystem.domain\\response\\bookinghistoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E964E9-60DE-4BA5-B52E-94EAFA313966}|CarRentalSystem.Domain\\CarRentalSystem.Domain.csproj|c:\\ss\\carrentalsystem0410\\carrentalsystem0410\\carrentalsystem\\carrentalsystem.domain\\response\\bookingresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E964E9-60DE-4BA5-B52E-94EAFA313966}|CarRentalSystem.Domain\\CarRentalSystem.Domain.csproj|solutionrelative:carrentalsystem.domain\\response\\bookingresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +42,117 @@
       "DocumentGroups": [
         {
           "DockedWidth": 345,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingHistoryWindow.xaml.cs",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\BookingHistoryWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFApp\\BookingHistoryWindow.xaml.cs",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\BookingHistoryWindow.xaml.cs",
+              "RelativeToolTip": "WPFApp\\BookingHistoryWindow.xaml.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAcwDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T05:19:04.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookingHistoryWindow.xaml",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\BookingHistoryWindow.xaml",
+              "RelativeDocumentMoniker": "WPFApp\\BookingHistoryWindow.xaml",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\BookingHistoryWindow.xaml",
+              "RelativeToolTip": "WPFApp\\BookingHistoryWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-15T05:18:37.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FinesDetailWindow.xaml.cs",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\FinesDetailWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFApp\\FinesDetailWindow.xaml.cs",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\FinesDetailWindow.xaml.cs",
+              "RelativeToolTip": "WPFApp\\FinesDetailWindow.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAQwBoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T05:14:39.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FinesService.cs",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Infrustructure\\FinesService.cs",
+              "RelativeDocumentMoniker": "CarRentalSystem.Infrustructure\\FinesService.cs",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Infrustructure\\FinesService.cs",
+              "RelativeToolTip": "CarRentalSystem.Infrustructure\\FinesService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA1wC8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T05:14:17.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookingHistoryResponse.cs",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Domain\\Response\\BookingHistoryResponse.cs",
+              "RelativeDocumentMoniker": "CarRentalSystem.Domain\\Response\\BookingHistoryResponse.cs",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Domain\\Response\\BookingHistoryResponse.cs",
+              "RelativeToolTip": "CarRentalSystem.Domain\\Response\\BookingHistoryResponse.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA9wCAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T05:11:37.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookingResponse.cs",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Domain\\Response\\BookingResponse.cs",
+              "RelativeDocumentMoniker": "CarRentalSystem.Domain\\Response\\BookingResponse.cs",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\CarRentalSystem.Domain\\Response\\BookingResponse.cs",
+              "RelativeToolTip": "CarRentalSystem.Domain\\Response\\BookingResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T05:11:31.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FinesDetailWindow.xaml",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\FinesDetailWindow.xaml",
+              "RelativeDocumentMoniker": "WPFApp\\FinesDetailWindow.xaml",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\FinesDetailWindow.xaml",
+              "RelativeToolTip": "WPFApp\\FinesDetailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-15T05:11:03.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransactionDetailWindow.xaml",
+              "DocumentMoniker": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\TransactionDetailWindow.xaml",
+              "RelativeDocumentMoniker": "WPFApp\\TransactionDetailWindow.xaml",
+              "ToolTip": "C:\\SS\\CarRentalSystem0410\\CarRentalSystem0410\\CarRentalSystem\\WPFApp\\TransactionDetailWindow.xaml",
+              "RelativeToolTip": "WPFApp\\TransactionDetailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-15T05:10:55.864Z",
+              "EditorCaption": ""
             }
           ]
         }

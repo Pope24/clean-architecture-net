@@ -33,7 +33,7 @@ namespace CarRentalSystem.Api.Controllers
         [HttpGet("{bookingId:Guid}")]
         public async Task<IActionResult> GetAsyncById(Guid bookingId)
         {
-            var booking = await _bookingService.GetAsyncById(bookingId);
+            var booking = await _bookingService.GetBookingHistoryAsyncById(bookingId);
             if (booking == null)
             {
                 return NotFound();
@@ -46,8 +46,43 @@ namespace CarRentalSystem.Api.Controllers
             var bookingResponse = await _bookingService.AddBookingAsync(bookingRequest);
             var booking = bookingResponse.Data.BookingEntity;
             bookingResponse.Data.PaymentLink = _paymentService.CreatePaymentUrlByVNPay(
-                new PaymentInforRequest(booking.Id, 10000000), HttpContext);
+                new PaymentInforRequest(booking.Id, bookingRequest.TotalAmount), HttpContext);
             return bookingResponse;
+        }
+        [HttpGet("booking-history/{userId:Guid}")]
+        public async Task<BasePaging<BookingHistoryResponse>> GetBookingHistoryByUserId(Guid userId, [FromQuery] BaseFilteration filter)
+        {
+            var res = await _bookingService.GetBookingsHistoryByUserIdAsync(userId, filter);
+            return res;
+        }
+        [HttpGet("create-payment-vnpay")]
+        public async Task<BookingResponse> CreatePaymentVNPayForBookingAsync(Guid bookingId, decimal totalAmount)
+        {
+            var booking = await _bookingService.GetAsyncById(bookingId);
+            var paymentLink = _paymentService.CreatePaymentUrlByVNPay(
+                new PaymentInforRequest(bookingId, totalAmount), HttpContext);
+            return new BookingResponse()
+            {
+                BookingEntity = booking,
+                PaymentLink = paymentLink
+            };
+        }
+        [HttpGet("register-return/{bookingId:Guid}")]
+        public async Task<bool> RegisterReturnVehicleAsync(Guid bookingId)
+        {
+            var booking = await _bookingService.GetAsyncById(bookingId);
+            booking.RegisterReturnDate = DateTime.Now.ToLocalTime();
+            return await _bookingService.UpdateBookingAsync(booking);
+        }
+        [HttpGet("booking-approve")]
+        public async Task<BasePaging<BookingHistoryResponse>> GetBookingNeedToApprove([FromQuery] BaseFilteration filter)
+        {
+            return await _bookingService.GetBookingNeedToApprove(filter);
+        }
+        [HttpGet("approve")]
+        public async Task<bool> ApproveBooking(Guid bookingId)
+        {
+            return await _bookingService.ApproveBooking(bookingId);
         }
     }
 }

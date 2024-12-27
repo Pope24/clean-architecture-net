@@ -10,7 +10,7 @@ namespace CarRentalSystem.Application.Contracts.Repository
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<UserEntity>> GetAllAsync();
+        Task<List<UserEntity>> GetAllAsync();
         Task<UserEntity> GetAsyncById(Guid id);
         Task<UserEntity> GetAsyncByUsername(string username);
         Task<UserEntity> GetAsyncByEmail(string email);

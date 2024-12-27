@@ -14,6 +14,13 @@ namespace CarRentalSystem.Application.Contracts.Service
     {
         Task<IEnumerable<BookingEntity>> GetAsync();
         Task<BookingEntity> GetAsyncById(Guid id);
+        Task<BookingHistoryResponse> GetBookingHistoryAsyncById(Guid id);
         Task<BaseResponse<BookingResponse>> AddBookingAsync(BookingRequest bookingRequest);
+        Task<bool> UpdateBookingAsync(BookingEntity entity);
+        Task<bool> UpdateBookingAfterPaymentAsync(Guid id);
+        Task<BasePaging<BookingHistoryResponse>> GetBookingsHistoryByUserIdAsync(Guid id, BaseFilteration filter);
+        Task<BookingHistoryResponse> ConvertBookingToBookingHistoryResponse(BookingEntity entity);
+        Task<BasePaging<BookingHistoryResponse>> GetBookingNeedToApprove(BaseFilteration filter);
+        Task<bool> ApproveBooking(Guid bookingId);
     }
 }

@@ -17,5 +17,6 @@ namespace CarRentalSystem.Domain.Request
         public DateTime StartDate { get; set; }
         public DateTime ExpectedReturnDate { get; set; }
         public string? ReturnAddress { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }

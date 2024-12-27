@@ -10,7 +10,7 @@ namespace CarRentalSystem.Application.Contracts.Repository
 {
     public interface IVehicleRepository
     {
-        Task<IEnumerable<VehicleEntity>> GetAsync();
+        Task<List<VehicleEntity>> GetAsync();
         Task<VehicleEntity> GetAsyncById(Guid id);
     }
 }
